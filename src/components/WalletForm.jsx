@@ -7,7 +7,6 @@ class WalletForm extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(fetchCurrency());
-    console.log(fetchCurrency());
   }
 
   render() {
@@ -16,6 +15,7 @@ class WalletForm extends Component {
       <div>
         <form>
           <label htmlFor="value-input">
+            Valor:
             <input
               data-testid="value-input"
               type="number"
@@ -24,6 +24,7 @@ class WalletForm extends Component {
             />
           </label>
           <label htmlFor="description-input">
+            Descrição:
             <input
               data-testid="description-input"
               type="text"
@@ -32,17 +33,19 @@ class WalletForm extends Component {
             />
           </label>
           <label htmlFor="currency-input">
+            Moeda:
             <select
               data-testid="currency-input"
               name=""
               id="currency-input"
             >
               {Object.values(currencies).map((currency) => (
-                <option key={ currency }>{currency}</option>
+                <option key={ currency } value={ currency }>{currency}</option>
               ))}
             </select>
           </label>
           <label htmlFor="paymentMethod">
+            Forma de pagamento:
             <select
               data-testid="method-input"
               id="paymentMethod"
@@ -54,6 +57,7 @@ class WalletForm extends Component {
             </select>
           </label>
           <label htmlFor="tag-input">
+            Categoria:
             <select
               data-testid="tag-input"
               name="tag-input"
