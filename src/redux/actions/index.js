@@ -1,14 +1,25 @@
+import fetchCurrencies from '../../services/api';
+
 // Coloque aqui suas actions
-export function userAction(act) {
+export function userAction(username) {
   return {
     type: 'USER',
-    act,
+    username,
   };
 }
 
-export function walletAction(act) {
+export function walletAction(currencies) {
   return {
-    type: 'WALLET',
-    act,
+    type: 'GET_CURRENCY',
+    currencies,
+  };
+}
+
+export function fetchCurrency() {
+  return async (dispatch) => {
+    const apiCurrency = await fetchCurrencies();
+    const currencies = Object
+      .keys(apiCurrency).filter((currency) => currency !== 'USDT');
+    dispatch(walletAction(currencies));
   };
 }
