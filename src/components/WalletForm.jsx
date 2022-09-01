@@ -70,6 +70,11 @@ class WalletForm extends Component {
               <option value="Saúde">Saúde</option>
             </select>
           </label>
+          <button
+            type="button"
+          >
+            Adicionar despesa
+          </button>
         </form>
       </div>
     );
@@ -85,5 +90,4 @@ WalletForm.propTypes = {
   currencies: PropTypes.shape.isRequired,
 };
 
-// export default WalletForm;
 export default connect(mapStateToProps)(WalletForm);
