@@ -11,7 +11,13 @@ function wallet(state = INITIAL_STATE, action) {
   case 'GET_CURRENCY':
     return {
       ...state,
-      currencies: action.currencies };
+      currencies: action.currencies,
+    };
+  case 'SAVE_EXPENSES':
+    return {
+      ...state,
+      expenses: action.expenses,
+    };
   default:
     return state;
   }

@@ -8,18 +8,22 @@ export function userAction(username) {
   };
 }
 
-export function walletAction(currencies) {
-  return {
+export const fetchCurrency = () => async (dispatch) => {
+  const allCurrencies = await fetchCurrencies();
+  const curren = Object.keys(allCurrencies);
+  dispatch({
     type: 'GET_CURRENCY',
-    currencies,
-  };
-}
+    currencies: curren.filter((e) => e !== curren[1]),
+    expenses: [],
+    editor: false,
+    idToEdit: 0,
+    exchangeRates: allCurrencies,
+  });
+};
 
-export function fetchCurrency() {
-  return async (dispatch) => {
-    const apiCurrency = await fetchCurrencies();
-    const currencies = Object
-      .keys(apiCurrency).filter((currency) => currency !== 'USDT');
-    dispatch(walletAction(currencies));
+export function expensesAction(payload) {
+  return {
+    type: 'SAVE_EXPENSES',
+    expenses: [...payload],
   };
 }
