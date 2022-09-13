@@ -31,7 +31,7 @@ class Table extends Component {
               const exchange = Number(currencies[e.currency].ask);
               return (
                 <tr key={ e.id }>
-                  <td>{ e.description }</td>
+                  <td data-testid="value-cell">{ e.description }</td>
                   <td>{ e.tag }</td>
                   <td>{ e.method }</td>
                   <td>{ value.toFixed(2) }</td>

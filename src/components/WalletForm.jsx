@@ -130,6 +130,7 @@ class WalletForm extends Component {
           </label>
           <button
             type="button"
+            data-testid="add-btn"
             onClick={ this.addExpense }
           >
             Adicionar despesa
