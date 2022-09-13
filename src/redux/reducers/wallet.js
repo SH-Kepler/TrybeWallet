@@ -12,6 +12,7 @@ function wallet(state = INITIAL_STATE, action) {
     return {
       ...state,
       currencies: action.currencies,
+      exchangeRates: action.exchangeRates,
     };
   case 'SAVE_EXPENSES':
     return {
