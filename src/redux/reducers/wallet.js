@@ -12,12 +12,16 @@ function wallet(state = INITIAL_STATE, action) {
     return {
       ...state,
       currencies: action.currencies,
-      exchangeRates: action.exchangeRates,
     };
   case 'SAVE_EXPENSES':
     return {
       ...state,
       expenses: action.expenses,
+    };
+  case 'DELETE_EXPENSE':
+    return {
+      ...state,
+      expenses: [...action.payload],
     };
   default:
     return state;

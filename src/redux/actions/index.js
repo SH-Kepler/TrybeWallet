@@ -1,10 +1,10 @@
 import fetchCurrencies from '../../services/api';
 
 // Coloque aqui suas actions
-export function userAction(username) {
+export function userAction(payload) {
   return {
     type: 'USER',
-    username,
+    payload: [...payload],
   };
 }
 
@@ -25,5 +25,12 @@ export function expensesAction(payload) {
   return {
     type: 'SAVE_EXPENSES',
     expenses: [...payload],
+  };
+}
+
+export function deleteExpenseAction(payload) {
+  return {
+    type: 'DELETE_EXPENSE',
+    payload,
   };
 }
