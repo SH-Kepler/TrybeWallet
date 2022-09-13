@@ -4,7 +4,7 @@ import fetchCurrencies from '../../services/api';
 export function userAction(payload) {
   return {
     type: 'USER',
-    payload: [...payload],
+    payload,
   };
 }
 
