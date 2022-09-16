@@ -1,0 +1,98 @@
+.form-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  form {
+    background-color: $white;
+    border-radius: 10px;
+    padding: 57px 98px;
+    .teste {
+      display: flex;
+      align-items: baseline;
+      .title {
+        display: flex;
+        align-items: flex-start;
+        margin: 10px;
+      }
+    }
+  }
+}
+
+.icon-theme {
+  display: flex;
+  align-items: baseline;
+  div {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  padding: 24px 110px;
+  span {
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 8px;
+    }
+  }
+}
+
+.white-container {
+  background-color: $white;
+  margin-inline: 10vw;
+  border-radius: 0 0 13px 13px;
+  position: absolute;
+  z-index: 9999;
+}
+
+.display-blue-container {
+  display: flex;
+  justify-content: center;
+}
+
+.blue-container {
+  background-color: $dark-blue;
+  position: absolute;
+  margin-block: 14.1vh;
+  margin-inline: 5vw;
+  padding-top: 27vh;
+  padding-inline: 5vw;
+  padding-bottom: 8vh;
+  border-radius: 13px;
+}
+
+.inputs-wallet-form {
+  background-color: $light-grey;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 24px 110px;
+  margin-bottom: 25px;
+  .margin-form {
+    margin-bottom: 25px;
+  }
+}
+
+.btn-form-wallet {
+  display: flex;
+  justify-content: center;
+  button {
+    color: $white;
+    padding: 10px 100px;
+    margin-bottom: 25px;
+    background-color: $light-green;
+    border: none;
+    border-radius: 5px;
+  }
+  button:hover {
+    cursor: pointer;
+    @include light-green(7);
+  }
+}
+

@@ -1,6 +1,12 @@
+/* eslint-disable no-irregular-whitespace */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import icon from '../styles/images/icon-trybewallet.png';
+import trybe from '../styles/images/Trybe.png';
+import wallet from '../styles/images/Wallet.png';
+import vector from '../styles/images/Vector.png';
+import user from '../styles/images/User.png';
 
 class Header extends Component {
   totalExpense = () => {
@@ -19,9 +25,30 @@ class Header extends Component {
     return (
       <div>
         <header>
-          <span data-testid="email-field">{ email }</span>
-          <span data-testid="total-field">{ this.totalExpense() }</span>
-          <span data-testid="header-currency-field">BRL</span>
+          <div className="icon-theme">
+            <img src={ icon } alt="icon trybewallet" />
+            <div>
+              <img src={ trybe } alt="trybe" />
+              <img src={ wallet } alt="wallet" />
+            </div>
+          </div>
+          <span
+            className="total-field"
+            data-testid="total-field"
+          >
+            <img src={ vector } alt="vector" />
+            <strong>Total de despesas: </strong>
+            { this.totalExpense() }
+            {' '}
+            BRL
+          </span>
+          <span
+            className="email-field"
+            data-testid="email-field"
+          >
+            <img src={ user } alt="user" />
+            { email }
+          </span>
         </header>
       </div>
     );

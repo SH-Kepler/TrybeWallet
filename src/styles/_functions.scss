@@ -1,0 +1,12 @@
+@mixin border ($value){
+  border: 1px solid $dark-blue;
+  border-radius: $value;
+}
+
+@mixin dark-blue ($value){
+  background-color: rgba(0, 57, 229, $value * 0.1);
+}
+
+@mixin light-green ($value){
+  background-color: rgba(47, 193, 140, $value * 0.1);
+}

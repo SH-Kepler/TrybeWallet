@@ -2,6 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { userAction } from '../redux/actions';
+import icon from '../styles/images/icon-trybewallet.png';
+import trybe from '../styles/images/Trybe.png';
+import wallet from '../styles/images/Wallet.png';
 
 const inittialState = {
   isDisabled: true,
@@ -44,39 +47,50 @@ class Login extends React.Component {
   render() {
     const { isDisabled, email, password } = this.state;
     return (
-      <div>
-        <div>Login</div>
+      <div className="form-login">
         <form>
-          <label htmlFor="input-email">
-            Email:
-            <input
-              type="email"
-              name="email"
-              id="input-email"
-              value={ email }
-              data-testid="email-input"
-              onChange={ this.handleChange }
-            />
-          </label>
-          <label htmlFor="input-password">
-            Senha:
-            <input
-              type="password"
-              name="password"
-              id="input-password"
-              value={ password }
-              data-testid="password-input"
-              onChange={ this.handleChange }
-            />
-          </label>
-          <button
-            type="button"
-            disabled={ isDisabled }
-            onClick={ this.completedLogin }
-          >
-            Entrar
+          <div className="teste">
+            <img src={ icon } alt="icon trybewallet" />
+            <div className="title">
+              <img src={ trybe } alt="trybe" />
+              <img src={ wallet } alt="wallet" />
+            </div>
+          </div>
+          <div className="inputs-login">
+            <fieldset>
+              <input
+                type="email"
+                name="email"
+                id="input-email"
+                value={ email }
+                data-testid="email-input"
+                onChange={ this.handleChange }
+                placeholder="E-mail"
+              />
+            </fieldset>
+            <br />
+            <fieldset>
+              <input
+                type="password"
+                name="password"
+                id="input-password"
+                value={ password }
+                data-testid="password-input"
+                onChange={ this.handleChange }
+                placeholder="Senha"
+              />
+            </fieldset>
+            <br />
+            <button
+              className="btn-login"
+              type="button"
+              disabled={ isDisabled }
+              onClick={ this.completedLogin }
+            >
+              Entrar
 
-          </button>
+            </button>
+          </div>
         </form>
       </div>
     );

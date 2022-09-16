@@ -7,9 +7,15 @@ class Wallet extends React.Component {
   render() {
     return (
       <div>
-        <Header />
-        <WalletForm />
-        <Table />
+        <div className="white-container">
+          <Header />
+          <WalletForm />
+        </div>
+        <div className="display-blue-container">
+          <div className="blue-container">
+            <Table />
+          </div>
+        </div>
       </div>
     );
   }

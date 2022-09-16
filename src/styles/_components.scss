@@ -1,0 +1,123 @@
+.inputs-login {
+  input {
+    border: 0;
+    font-size: 18px;
+  }
+  
+  input:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+  }
+  
+  input::placeholder {
+    color: $dark-blue
+  }
+
+  fieldset {
+    @include border(5px);
+  }
+}
+
+.inputs-login {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-login {
+  font-size: 18px;
+  @include border(5px);
+  padding: 8px;
+  background-color: $dark-blue;
+  color: $white;
+}
+
+.btn-login:disabled {
+  @include dark-blue(2);
+  color: $light-grey;
+}
+.btn-login:hover:enabled {
+  cursor: pointer;
+  @include dark-blue(8)
+}
+
+.total-field {
+  color: $dark-blue;
+}
+
+.email-field {
+  color: $light-green;
+}
+
+label {
+  color: $dark-blue;
+  font-weight: 600;
+  input {
+    background-color: $light-grey;
+    @include border(5px);
+    color: $dark-blue;
+    font-size: 17px;
+  }
+  select {
+    background-color: $light-grey;
+    @include border(5px);
+    color: $dark-blue;
+    font-size: 17px;
+  }
+}
+
+.number2-wrapper {
+  position: relative;
+}
+
+.number2-wrapper:after,
+.number2-wrapper:before {
+  position: absolute;
+  right: 5px;
+  width: 1.6em;
+  height: .9em;
+  font-size: 10px;
+  pointer-events: none;
+  background: #fff;
+}
+.number2-wrapper:after {
+  background-color: $light-grey;
+  color: $dark-blue;
+  content: "\25B2";
+  margin-top: 1px;
+}
+.number2-wrapper:before {
+  background-color: $light-grey;
+  color: $dark-blue;
+  content: "\25BC";
+  margin-bottom: 10px;
+  bottom: -.5em;
+}
+
+th {
+  border-bottom: 1px solid $white;
+  font-weight: bold;
+  color: $white;
+}
+
+td {
+  border-top: 1px solid $light-green;
+  color: $light-green;
+}
+  
+table {
+  border-collapse: collapse;
+}
+  
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+  
+tr:hover {
+  background-color: rgba(0, 215, 226, 0.161);
+}
+
+tr button {
+  cursor: pointer;
+}
