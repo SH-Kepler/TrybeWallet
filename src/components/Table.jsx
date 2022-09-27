@@ -31,6 +31,7 @@ class Table extends Component {
             const currencies = e.exchangeRates;
             const value = Number(e.value);
             const exchange = Number(currencies[e.currency].ask);
+            const valorConvertido = exchange * value;
             return (
               <tr key={ e.id }>
                 <td data-testid="value-cell">{ e.description }</td>
@@ -39,7 +40,7 @@ class Table extends Component {
                 <td>{ value.toFixed(2) }</td>
                 <td>{currencies[e.currency].name.replace('/Real Brasileiro', '')}</td>
                 <td>{ exchange.toFixed(2) }</td>
-                <td>{ exchange * value.toFixed(2) }</td>
+                <td>{ valorConvertido.toFixed(2)}</td>
                 <td>Real</td>
                 <td>
                   <button
